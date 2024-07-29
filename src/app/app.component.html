@@ -10,8 +10,8 @@
               id="username"
               name="username"
               class="form-control"
-          ngModel
-            />
+            ngModel
+          required          />
           </div>
           <button class="btn btn-default" type="button">
             Suggest an Username
@@ -24,17 +24,32 @@
               id="email"
               class="form-control"
               ngModel
+              required email
+              #email="ngModel"
             />
+            <!-- #eamil this is create the refernce of email feild -->
+            <!-- error message show  -->
+            <span *ngIf="!email.valid && email.touched">Please enter a valid email</span>
           </div>
+         
         </div>
+       
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control" name="secret">
+          <select id="secret" class="form-control" 
+          name="secret" [ngModel]="defaultQuestion">
+
+          <!-- [ngModel ] this is using property binding  -->
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first name?</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit" >Submit</button>
+        <div class="form-group">
+          <textarea name="question" id="" [(ngModel)]="answer"></textarea>
+        </div>
+        <!-- two ay data binding -->
+        <h4>Your Reply {{answer}}</h4>
+        <button class="btn btn-primary" type="submit"  [disabled]="!form.valid">Submit</button>
       </form>
     </div>
   </div>

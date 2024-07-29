@@ -10,7 +10,8 @@ export class AppComponent
  {
 
   @ViewChild ('form') myFrom :NgForm
-
+  defaultQuestion="pet"
+  answer=''
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
