@@ -2,7 +2,10 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit()" #form="ngForm">
-        <div id="user-data">
+        <div id="user-data"
+        ngModelGroup="userData"
+        #userData="ngModelGroup"
+        >
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -13,7 +16,7 @@
             ngModel
           required          />
           </div>
-          <button class="btn btn-default" type="button">
+          <button class="btn btn-default" type="button" (click)="suggestUserName()">
             Suggest an Username
           </button>
           <div class="form-group">      
@@ -31,7 +34,7 @@
             <!-- error message show  -->
             <span *ngIf="!email.valid && email.touched">Please enter a valid email</span>
           </div>
-         
+          <span *ngIf="!userData.valid && userData.touched">Please enter a valid email</span>
         </div>
        
         <div class="form-group">
@@ -51,6 +54,20 @@
         <h4>Your Reply {{answer}}</h4>
         <button class="btn btn-primary" type="submit"  [disabled]="!form.valid">Submit</button>
       </form>
+      <hr>
+    </div>
+    
+  </div>
+
+  <!-- Display data  Using Form Data-->
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+
+      <h3>Your Data</h3>
+      <p>Username:{{user.username}}</p>
+      <p>Mail: {{user.email}}</p>
+      <p>Secret Question: {{user.secret}}</p>
+      <p>Answer {{user.question}}</p>
     </div>
   </div>
 </div>
