@@ -12,8 +12,10 @@
               formControlName="username"
               class="form-control"
             />
+            <!-- signupForm.get(['userData','username']) -->
             <span
               *ngIf="
+              
                 !signupForm.get('userData.username').valid &&
                 signupForm.get('userData.username').touched">
                 <!-- add error using code showing -->
@@ -24,7 +26,7 @@
             >
           </div>
           <div class="form-group">
-            <label for="email">email</label>
+            <label for="email">Email</label>
             <input
               type="text"
               id="email"
@@ -47,17 +49,25 @@
             }}
           </label>
         </div>
-        <div formArrayName="hobbies">
+        <div >
           <h4>Your Hobbies</h4>
           <button class="btn btn-default" type="button" (click)="onAddHobby()">
             Add Hobby
           </button>
           <div
             class="form-group"
-            *ngFor="let hobbyControl of controls; let i = index"
-        
-          >
+           
+           formArrayName="hobbies"
+           *ngFor="let hobbyControl of signupForm.get('hobbies')?.controls; let i = index">
+      
+          <!-- *ngFor="let hobbyControl of signupForm.get('hobbies')?.controls; let i = index" -->
+          <!-- *ngFor="let hobbyControl of controls; let i = index" -->
+          <!-- *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index" -->
+           <div>
             <input type="text" class="form-control" [formControlName]="i" />
+           </div>
+      
+            
           </div>
         </div>
         <span *ngIf="!signupForm.valid && signupForm.touched"

@@ -66,4 +66,7 @@ this.user.question=this.myFrom.value.question
 // reset my form
 this.myFrom.reset()
 }
+
+
+
 }

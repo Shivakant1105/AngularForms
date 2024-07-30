@@ -1,3 +1,22 @@
 input.ng-invalid.ng-touched{
     border: 1px solid red;
     }
+
+    /* // get controls() {
+        //   return this.signupForm.get('hobbies') as FormArray;
+        // // }
+        onAddHobby() {
+        //   //   const control=new FormControl( null, Validators.required);
+        //   // (<FormArray>this.signupForm.get('hobbies')).push(control)
+          let formGroup = this.fb.group({
+            hobby: new FormControl('', [Validators.required]),
+          });
+          // this.controls.push(formGroup);
+         let formArray = this.signupForm.get('hobbies') as FormArray;
+         formArray.push(formGroup)
+        }
+      
+        // onAddHobby(){
+        //   const control=new FormControl( null, Validators.required);
+        //   (<FormArray>this.signupForm.get('hobbies')).push(control)
+        // } */
