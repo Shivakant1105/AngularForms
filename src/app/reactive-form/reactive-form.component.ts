@@ -41,7 +41,7 @@ onAddHobby(){
 // custom validators name take not shiva and vivek
 forbiddenNames(control:FormControl):{[s:string]:boolean}{
 if(this.forbiddenUsernames.indexOf(control.value) !== -1){
-  return{'nameIfforbidden':true}
+  return{'nameIsForbidden':true}
 }
 return null
 }
