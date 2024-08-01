@@ -31,7 +31,7 @@
                 required email
                 #email="ngModel"
               />
-              <!-- #eamil this is create the refernce of email feild -->
+              <!-- #email this is create the reference of email feild -->
               <!-- error message show  -->
               <span *ngIf="!email.valid && email.touched">Please enter a valid email</span>
             </div>
@@ -71,4 +71,7 @@
         <p>Answer {{user.question}}</p>
       </div>
     </div>
+    <hr>
+    <button routerLink="/reactive-form" class="btn btn-primary
+    ">Reactive-Form</button>
   </div>

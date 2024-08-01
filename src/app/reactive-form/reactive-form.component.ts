@@ -36,15 +36,15 @@ export class ReactiveFormComponent implements OnInit {
       hobbies: new FormArray([]),
     });
     // valuechange obs
-    this.signupForm.valueChanges.subscribe(
-      (value)=>console.log("valueChanges==>",value)
+    // this.signupForm.valueChanges.subscribe(
+    //   (value)=>console.log("valueChanges==>",value)
       
-    )
+    // )
     // statusChanges
-    this.signupForm.statusChanges.subscribe(
-      (status)=>console.log("statusChanges==>",status)
+    // this.signupForm.statusChanges.subscribe(
+    //   (status)=>console.log("statusChanges==>",status)
       
-    )
+    // )
 
     // setvalue
     this.signupForm.setValue({
