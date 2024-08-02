@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+;
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,11 @@ export class LoadingService {
 
   hide() {
     this.loadingSubject.next(false);
+  }
+
+  hideAfterDelay(delayMs: number) {
+    setTimeout(() => {
+      this.hide();
+    }, delayMs);
   }
 }

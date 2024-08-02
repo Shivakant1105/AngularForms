@@ -20,17 +20,10 @@ export class AppComponent implements OnInit {
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        console.log('NavigationStart');
         this.loadingService.show();
       } else if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
-        console.log('NavigationEnd or Cancel or Error');
-        this.loadingService.hide();
+        this.loadingService.hideAfterDelay(1000); // 10 seconds delay
       }
     });
-    this.loadingService.loading$.subscribe((loading) => {
-      console.log('Loading state:', loading);
-      this.loading = loading;
-    });
   }
-  
 }
