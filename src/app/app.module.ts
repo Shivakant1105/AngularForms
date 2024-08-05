@@ -9,19 +9,24 @@ import { TempleteDrivenFormComponent } from './templete-driven-form/templete-dri
 import { AppRoutingModule } from './app-routing.module';
 import { LoaderSpinnerComponent } from './loader/loader-spinner/loader-spinner.component';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReactiveFormComponent,
     TempleteDrivenFormComponent,
-    LoaderSpinnerComponent
+    LoaderSpinnerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule,   AppRoutingModule
+    ReactiveFormsModule, 
+      AppRoutingModule,
+       HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
