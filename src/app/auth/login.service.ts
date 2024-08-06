@@ -24,8 +24,8 @@ export class LoginService {
   }
   
   constructor(public http:HttpClient) { }
-  login(payload:any){
-    return this.http.post('https://dummyjson.com/auth/login',payload).pipe(map((res)=>{
+  login(data:any){
+    return this.http.post('https://dummyjson.com/auth/login',data).pipe(map((res)=>{
       return res
     }))
   }
@@ -39,9 +39,10 @@ export class LoginService {
   }
   getUserByAPi(){
     return this.http.get('https://dummyjson.com/auth/me')
+
   }
-  signUp(payload:any){
-    return this.http.post('https://dummyjson.com/users/add',payload)
+  signUp(data:any){
+    return this.http.post('https://dummyjson.com/users/add',data)
       
 
   }

@@ -35,6 +35,8 @@ onSubmit() {
               this._auth.setDataInLocalStorage(
                 'userData',
                 JSON.stringify(data)
+                // console.log(data.to);
+                
               );
               this._auth.setDataInLocalStorage('tkn', JSON.stringify(token));
               this.route.navigate(['/reactive-form']);

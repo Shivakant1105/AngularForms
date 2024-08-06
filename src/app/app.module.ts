@@ -11,6 +11,7 @@ import { LoaderSpinnerComponent } from './loader/loader-spinner/loader-spinner.c
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorsComponent } from './errors/errors.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormComponent,
     TempleteDrivenFormComponent,
     LoaderSpinnerComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorsComponent
   ],
   imports: [
     BrowserModule,
