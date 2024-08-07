@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorsComponent } from './errors/errors.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorsComponent } from './errors/errors.component';
     TempleteDrivenFormComponent,
     LoaderSpinnerComponent,
     LoginComponent,
-    ErrorsComponent
+    ErrorsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -39,7 +39,7 @@ onSubmit() {
                 
               );
               this._auth.setDataInLocalStorage('tkn', JSON.stringify(token));
-              this.route.navigate(['/reactive-form']);
+              this.route.navigate(['/home']);
             }
           },
           error: (e) => {
