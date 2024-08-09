@@ -13,6 +13,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorsComponent } from './errors/errors.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CustomEditorComponent } from './pages/custom-editor/custom-editor.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { HomeComponent } from './pages/home/home.component';
     LoaderSpinnerComponent,
     LoginComponent,
     ErrorsComponent,
-    HomeComponent
+    HomeComponent,
+    
+    CustomEditorComponent
   ],
   imports: [
     BrowserModule,

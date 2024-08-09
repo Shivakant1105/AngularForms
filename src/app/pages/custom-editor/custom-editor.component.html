@@ -1,0 +1,15 @@
+<div class="toolbar">
+    <button (click)="format('bold')">Bold</button>
+    <button (click)="format('italic')">Italic</button>
+    <button (click)="format('underline')">Underline</button>
+    <button (click)="format('insertOrderedList')">Ordered List</button>
+    <button (click)="format('insertUnorderedList')">Unordered List</button>
+  </div>
+  <div
+    class="editor"
+    contenteditable="true"
+innerHTML="content"
+    (input)="onContentChange($event)"
+  >
+  </div>
+  
