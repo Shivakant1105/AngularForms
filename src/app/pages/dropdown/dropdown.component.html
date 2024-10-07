@@ -1,0 +1,19 @@
+<p>Dropdown works!</p>
+<div class="select-wrapper" (click)="toggleDropdown()">
+  <div class="select" [class.open]="isOpen">
+    <div class="select__trigger">
+      <span>{{ selectedOption }}</span>
+      <div class="arrow"></div>
+    </div>
+    <div class="custom-options" *ngIf="isOpen">
+      <span
+        class="custom-option"
+        *ngFor="let option of options"
+        [class.selected]="option.label === selectedOption"
+        (click)="selectOption(option.label)"
+      >
+        {{ option.label }}
+      </span>
+    </div>
+  </div>
+</div>
