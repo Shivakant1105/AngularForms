@@ -13,13 +13,14 @@ export class HomeComponent implements OnInit {
   posts: any[] = [];
   currentPage = 1;
   postsPerPage = 10;
-  hasMorePosts = true; 
+  hasMorePosts = true;
   ngOnInit(): void {
-
+    this.getAllUsers();
+    this.getUserById();
     this.postService.getPost().subscribe({
-      next:(data:any)=>{
-this.posts=data
-console.log(data);
+      next: (data: any) => {
+        this.posts = data
+        console.log(data);
 
       }
     })
@@ -47,4 +48,21 @@ console.log(data);
   //     this.loadPosts();
   //   }
   // }
+
+  getAllUsers() {
+    this.postService.getAllUser().subscribe({
+      next: (data: any) => {
+        console.log("get all  employee====>>", data);
+
+      }
+    })
+  }
+  getUserById() {
+    this.postService.getUserById(1).subscribe({
+      next: (res: any) => {
+        console.log("get employee by id====>>", res);
+
+      }
+    })
+  }
 }

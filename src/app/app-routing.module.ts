@@ -7,20 +7,31 @@ import { LoginComponent } from './auth/login/login.component';
 import { ErrorsComponent } from './errors/errors.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CustomEditorComponent } from './pages/custom-editor/custom-editor.component';
-
+import { DropdownComponent } from './pages/dropdown/dropdown.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {path: 'login' ,component:LoginComponent},
-  {path:'home',component:HomeComponent},
-  {path:'editor',component:CustomEditorComponent},
-  { path: 'reactive-form', component: ReactiveFormComponent,canActivate:[DealyGuard] },
-  { path: 'template-form', component: TempleteDrivenFormComponent,canActivate:[DealyGuard]  },
-  { path: '**', component: ErrorsComponent, data: { error: 404 } }
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'dropdown', component: DropdownComponent },
+  { path: 'editor', component: CustomEditorComponent },
+  { path: 'calender', component: CalendarComponent },
+  {
+    path: 'reactive-form',
+    component: ReactiveFormComponent,
+    canActivate: [DealyGuard],
+  },
+  {
+    path: 'template-form',
+    component: TempleteDrivenFormComponent,
+    canActivate: [DealyGuard],
+  },
+  { path: '**', component: ErrorsComponent, data: { error: 404 } },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
